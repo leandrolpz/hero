@@ -22,8 +22,16 @@ export default function HeroList() {
           <div className="col-md-4 mb-3" key={hero._id}>
             <div className="card shadow-sm">
               <div className="card-body">
+
+                {/* Nome */}
                 <h5 className="card-title">{hero.name}</h5>
 
+                {/* ID */}
+                <p className="card-text">
+                  <strong>ID:</strong> <span className="text-muted">{hero._id}</span>
+                </p>
+
+                {/* Poderes */}
                 <p className="card-text">
                   <strong>Poderes:</strong>{" "}
                   {hero.powers && hero.powers.length > 0 ? (
@@ -32,6 +40,7 @@ export default function HeroList() {
                     <span className="text-muted">Nenhum poder cadastrado</span>
                   )}
                 </p>
+
               </div>
             </div>
           </div>

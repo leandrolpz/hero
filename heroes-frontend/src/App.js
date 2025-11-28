@@ -3,6 +3,9 @@ import HeroForm from "./components/HeroForm";
 import HeroList from "./components/HeroList";
 import PowerForm from "./components/PowerForm";
 import PowerList from "./components/PowerList";
+import HeroSearch from "./components/HeroSearch";
+import HeroUpdate from "./components/HeroUpdate";
+import HeroDelete from "./components/HeroDelete";
 
 function App() {
   const [page, setPage] = useState("heroes");
@@ -21,6 +24,18 @@ function App() {
             Cadastrar Herói
           </button>
 
+          <button className="btn btn-info me-2" onClick={() => setPage("heroSearch")}>
+            Buscar Herói
+          </button>
+
+          <button className="btn btn-warning me-2" onClick={() => setPage("heroUpdate")}>
+            Atualizar Herói
+          </button>
+
+          <button className="btn btn-danger me-2" onClick={() => setPage("heroDelete")}>
+            Deletar Herói
+          </button>
+
           <button className="btn btn-warning me-2" onClick={() => setPage("powers")}>
             Listar Poderes
           </button>
@@ -33,6 +48,9 @@ function App() {
 
       {page === "heroes" && <HeroList />}
       {page === "heroForm" && <HeroForm />}
+      {page === "heroSearch" && <HeroSearch />}
+      {page === "heroUpdate" && <HeroUpdate />}
+      {page === "heroDelete" && <HeroDelete />}
       {page === "powers" && <PowerList />}
       {page === "powerForm" && <PowerForm />}
     </div>
